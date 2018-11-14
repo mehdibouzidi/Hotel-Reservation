@@ -14,10 +14,11 @@ public class ReservationResponse {
     private Links links;
 
     public ReservationResponse(){
-
+        super();
     }
 
     public ReservationResponse(Integer roomNumber, Integer price) {
+        super();
         this.roomNumber = roomNumber;
         this.price = price;
     }
