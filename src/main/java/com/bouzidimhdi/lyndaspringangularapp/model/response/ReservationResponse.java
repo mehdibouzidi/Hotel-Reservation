@@ -1,25 +1,25 @@
 package com.bouzidimhdi.lyndaspringangularapp.model.response;
 
-import com.bouzidimhdi.lyndaspringangularapp.model.Links;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
 public class ReservationResponse {
 
-    private Long id;
-    private Integer roomNumber;
-    private Integer price;
-    private Links links;
 
-    public ReservationResponse(){
-        super();
+    private Long id;
+    private LocalDate checkin;
+    private LocalDate checkout;
+
+    public ReservationResponse() {
     }
 
-    public ReservationResponse(Integer roomNumber, Integer price) {
-        super();
-        this.roomNumber = roomNumber;
-        this.price = price;
+    public ReservationResponse(Long id, LocalDate checkin, LocalDate checkout) {
+        this.id = id;
+        this.checkin = checkin;
+        this.checkout = checkout;
     }
 }

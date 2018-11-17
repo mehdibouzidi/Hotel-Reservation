@@ -1,6 +1,8 @@
 package com.bouzidimhdi.lyndaspringangularapp.config;
 
-import convertor.RoomEntityToReservationResponseConverter;
+import convertor.ReservationEntityToReservationResponseConverter;
+import convertor.ReservationRequestToReservationEntityConverter;
+import convertor.RoomEntityToReservableRoomResponseConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
@@ -15,7 +17,9 @@ public class ConversionConfig {
 
         private Set<Converter> getConverters(){
             Set<Converter> converters= new HashSet<Converter>();
-            converters.add(new RoomEntityToReservationResponseConverter());
+            converters.add(new RoomEntityToReservableRoomResponseConverter());
+            converters.add(new ReservationEntityToReservationResponseConverter());
+            converters.add(new ReservationRequestToReservationEntityConverter());
             return converters;
         }
 
